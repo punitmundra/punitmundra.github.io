@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Punit Mundra — Senior Engineering Manager</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #0f172a;
+      --surface: #1e293b;
+      --card: #334155;
+      --accent: #38bdf8;
+      --accent2: #818cf8;
+      --text: #e2e8f0;
+      --text-muted: #94a3b8;
+      --border: #475569;
+      --gradient: linear-gradient(135deg, #38bdf8, #818cf8);
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+    }
+
+    /* NAV */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      background: rgba(15,23,42,.85);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      padding: .75rem 2rem;
+      display: flex; justify-content: space-between; align-items: center;
+    }
+    nav .logo { font-weight: 700; font-size: 1.15rem; background: var(--gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    nav ul { list-style: none; display: flex; gap: 1.5rem; }
+    nav a { color: var(--text-muted); text-decoration: none; font-size: .875rem; font-weight: 500; transition: color .2s; }
+    nav a:hover { color: var(--accent); }
+
+    /* HERO */
+    .hero {
+      min-height: 100vh; display: flex; align-items: center; justify-content: center;
+      text-align: center; padding: 6rem 2rem 4rem;
+      background: radial-gradient(ellipse at 50% 0%, rgba(56,189,248,.08) 0%, transparent 60%);
+    }
+    .hero h1 { font-size: 3.25rem; font-weight: 700; margin-bottom: .5rem; }
+    .hero h1 span { background: var(--gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    .hero p.subtitle { font-size: 1.25rem; color: var(--text-muted); margin-bottom: 1.5rem; }
+    .hero .contact { display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center; margin-bottom: 2rem; font-size: .9rem; color: var(--text-muted); }
+    .hero .contact a { color: var(--accent); text-decoration: none; }
+    .hero .contact a:hover { text-decoration: underline; }
+    .hero .cta-row { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+    .btn {
+      display: inline-flex; align-items: center; gap: .5rem;
+      padding: .7rem 1.6rem; border-radius: .5rem; font-weight: 600; font-size: .9rem;
+      text-decoration: none; transition: transform .15s, box-shadow .15s;
+    }
+    .btn:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(56,189,248,.25); }
+    .btn-primary { background: var(--gradient); color: #0f172a; }
+    .btn-outline { border: 1.5px solid var(--accent); color: var(--accent); background: transparent; }
+
+    /* SECTIONS */
+    section { padding: 5rem 2rem; max-width: 1100px; margin: auto; }
+    .section-title { font-size: 2rem; font-weight: 700; margin-bottom: .5rem; }
+    .section-title span { background: var(--gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    .section-subtitle { color: var(--text-muted); margin-bottom: 2.5rem; }
+
+    /* CARDS */
+    .card {
+      background: var(--surface); border: 1px solid var(--border); border-radius: .75rem;
+      padding: 2rem; margin-bottom: 1.5rem; transition: border-color .2s, box-shadow .2s;
+    }
+    .card:hover { border-color: var(--accent); box-shadow: 0 0 20px rgba(56,189,248,.08); }
+    .card h3 { font-size: 1.25rem; margin-bottom: .25rem; }
+    .card .meta { font-size: .85rem; color: var(--text-muted); margin-bottom: 1rem; }
+    .card ul { padding-left: 1.25rem; }
+    .card li { margin-bottom: .4rem; color: var(--text); }
+    .card li::marker { color: var(--accent); }
+
+    /* TAGS */
+    .tags { display: flex; flex-wrap: wrap; gap: .5rem; margin-top: 1rem; }
+    .tag {
+      background: rgba(56,189,248,.1); color: var(--accent); font-size: .75rem; font-weight: 600;
+      padding: .3rem .7rem; border-radius: 9999px; border: 1px solid rgba(56,189,248,.2);
+    }
+
+    /* SKILLS GRID */
+    .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.25rem; }
+    .skill-card { background: var(--surface); border: 1px solid var(--border); border-radius: .75rem; padding: 1.5rem; }
+    .skill-card h4 { color: var(--accent); margin-bottom: .75rem; font-size: .95rem; text-transform: uppercase; letter-spacing: .05em; }
+    .skill-card p { color: var(--text); font-size: .9rem; }
+
+    /* TIMELINE */
+    .timeline { position: relative; padding-left: 2rem; }
+    .timeline::before { content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 2px; background: var(--border); }
+    .timeline-item { position: relative; margin-bottom: 2rem; }
+    .timeline-item::before {
+      content: ''; position: absolute; left: -2rem; top: .45rem;
+      width: 12px; height: 12px; border-radius: 50%; background: var(--accent); border: 2px solid var(--bg);
+      transform: translateX(-5px);
+    }
+    .timeline-item h3 { font-size: 1.1rem; }
+    .timeline-item .meta { font-size: .85rem; color: var(--text-muted); }
+    .timeline-item p { margin-top: .5rem; color: var(--text-muted); font-size: .9rem; }
+
+    /* REPO TABLE */
+    .repo-table { width: 100%; border-collapse: collapse; margin-top: 1.5rem; font-size: .9rem; }
+    .repo-table th { text-align: left; padding: .75rem 1rem; background: var(--card); color: var(--accent); font-weight: 600; border-bottom: 2px solid var(--border); }
+    .repo-table td { padding: .65rem 1rem; border-bottom: 1px solid var(--border); }
+    .repo-table tr:hover td { background: rgba(56,189,248,.04); }
+    .repo-table code { background: var(--card); padding: .15rem .4rem; border-radius: 4px; font-size: .8rem; }
+
+    /* FOOTER */
+    footer {
+      text-align: center; padding: 3rem 2rem; border-top: 1px solid var(--border);
+      color: var(--text-muted); font-size: .85rem;
+    }
+    footer a { color: var(--accent); text-decoration: none; }
+
+    /* MOBILE */
+    @media (max-width: 768px) {
+      .hero h1 { font-size: 2rem; }
+      nav ul { gap: .75rem; }
+      nav a { font-size: .75rem; }
+      section { padding: 3rem 1.25rem; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="logo">Punit Mundra</div>
+  <ul>
+    <li><a href="#about">About</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#education">Education</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div>
+    <h1>Hi, I'm <span>Punit Mundra</span></h1>
+    <p class="subtitle">Senior Engineering Manager · Backend Systems · Cloud &amp; SaaS</p>
+    <div class="contact">
+      <span>📞 +91 9738869492</span>
+      <span>✉️ <a href="mailto:punitmundra2008@gmail.com">punitmundra2008@gmail.com</a></span>
+      <span>📍 Bengaluru, India</span>
+    </div>
+    <div class="cta-row">
+      <a href="Punit_CV.pdf" class="btn btn-primary" download>📄 Download Resume</a>
+      <a href="https://www.linkedin.com/in/punit-mundra/" target="_blank" class="btn btn-outline">🔗 LinkedIn</a>
+      <a href="https://github.com/punitmundra" target="_blank" class="btn btn-outline">💻 GitHub</a>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <h2 class="section-title"><span>About Me</span></h2>
+  <p class="section-subtitle">14+ years building high-performance backend systems &amp; leading distributed teams</p>
+  <div class="card">
+    <ul>
+      <li><strong>AI-augmented engineering leader</strong> — Pioneered the adoption of GitHub Copilot across the engineering team, embedding custom Copilot instructions and prompt engineering into repositories to accelerate code generation, pull request reviews, and onboarding workflows.</li>
+      <li><strong>Hands-on AI practitioner</strong> — Actively use AI-assisted tooling (GitHub Copilot, LLM-based code review, prompt-driven automation) in day-to-day engineering work — from writing boilerplate Golang services, to generating shell scripts, to querying and analysing AWS infrastructure at speed.</li>
+      <li><strong>Proven delivery track record</strong> — Shipped Platform 360 from greenfield to production, grew the engineering team through structured hiring, and consistently delivered HA-grade distributed systems in Golang and AWS meeting enterprise SLA targets.</li>
+      <li>Deep expertise in <strong>Golang, AWS, PostgreSQL, and OpenSearch</strong> with a strong focus on clean architecture, developer productivity, and operational reliability at scale.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <h2 class="section-title"><span>Experience</span></h2>
+  <p class="section-subtitle">Career timeline across enterprise software companies</p>
+
+  <div class="timeline">
+    <div class="timeline-item">
+      <h3>Progress Software (Chef) — Senior Engineering Manager</h3>
+      <div class="meta">Dec 2020 – Present</div>
+      <p>Lead a team of 8 engineers across 15+ microservices for Platform 360 — a multi-tenant SaaS platform. Drove AWS cost reduction, improved deployment frequency with GitOps, shipped Platform 360 from greenfield to production, pioneered AI-assisted development with GitHub Copilot, and architected Automate HA for multi-node on-premises &amp; air-gapped deployments.</p>
+    </div>
+    <div class="timeline-item">
+      <h3>Finnovation Pvt Ltd — Team Lead</h3>
+      <div class="meta">Aug 2019 – Nov 2020</div>
+      <p>Led backend engineering for Video KYC (V-KYC) — a P2P video call identity verification platform built as SaaS for enterprise banking customers on AWS Lambda with WebRTC, Redis, and gRPC.</p>
+    </div>
+    <div class="timeline-item">
+      <h3>Exotel — Software Engineer II</h3>
+      <div class="meta">Nov 2018 – Jul 2019</div>
+      <p>Built and integrated IP Calling SDK wrappers and FCM push notification services for enterprise customers.</p>
+    </div>
+    <div class="timeline-item">
+      <h3>Mitel Networks — Senior M.Tech. Staff I</h3>
+      <div class="meta">May 2016 – Nov 2018</div>
+      <p>Developed backend services for enterprise communication platforms; contributed to scalable telephony infrastructure and HA communication workloads.</p>
+    </div>
+    <div class="timeline-item">
+      <h3>Samsung R&D — Software Engineer II</h3>
+      <div class="meta">Jan 2014 – May 2016</div>
+      <p>Worked on embedded and application-layer software for Samsung mobile and IoT products.</p>
+    </div>
+    <div class="timeline-item">
+      <h3>Ixia Technologies — Software Engineer I</h3>
+      <div class="meta">Jul 2011 – Dec 2013</div>
+      <p>Developed network testing tools and automation frameworks for protocol validation and QA.</p>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <h2 class="section-title"><span>Key Projects at Progress</span></h2>
+  <p class="section-subtitle">Deep dive into the work I've shipped</p>
+
+  <!-- Platform 360 -->
+  <div class="card">
+    <h3>🚀 Chef 360 Platform</h3>
+    <div class="meta">103+ commits · Dec 2023 – Mar 2026 · 9 repositories</div>
+    <p style="color:var(--text-muted); margin-bottom:1rem;">Multi-tenant SaaS platform built on microservices architecture supporting enterprise Chef customers. Delivers user &amp; tenant management, authorization, and notification services at scale.</p>
+    <ul>
+      <li><strong>Built the User Identity &amp; Auth Service from scratch</strong> — Login API, JWT refresh, auth code verification, DAL for users, sessions, API tokens, and credentials (38 commits).</li>
+      <li><strong>API Gateway contributions</strong> — Prometheus metrics, rate limiting, token auth bug fixes, Go 1.24.4 upgrade.</li>
+      <li><strong>Authorization Service</strong> — RBAC roles support, enrollment APIs, Copilot instructions setup.</li>
+      <li><strong>Notification Service</strong> — SendGrid email integration, logger crash fix, Copilot instructions.</li>
+      <li><strong>Kubernetes Helm Charts</strong> — Keycloak performance tuning, RabbitMQ logging, PostgreSQL RDS support, metrics endpoints (22 commits).</li>
+      <li><strong>Replicated On-Prem Packaging</strong> — Tiered HA preflight checks, Keycloak optimisation, managed services support, archive pipeline (13 commits).</li>
+    </ul>
+    <div class="tags">
+      <span class="tag">Golang</span><span class="tag">PostgreSQL</span><span class="tag">OpenSearch</span>
+      <span class="tag">Kubernetes</span><span class="tag">Helm</span><span class="tag">Docker</span>
+      <span class="tag">Replicated</span><span class="tag">JWT</span><span class="tag">Keycloak</span>
+      <span class="tag">RabbitMQ</span><span class="tag">SendGrid</span><span class="tag">AWS</span>
+    </div>
+
+    <table class="repo-table">
+      <thead><tr><th>Repository</th><th>Commits</th><th>Period</th><th>Domain</th></tr></thead>
+      <tbody>
+        <tr><td><code>user-accounts-service</code></td><td>38</td><td>Dec 2023 – Mar 2024</td><td>Identity &amp; Auth</td></tr>
+        <tr><td><code>helm</code></td><td>22</td><td>Oct 2024 – Mar 2026</td><td>Kubernetes Helm</td></tr>
+        <tr><td><code>chef-replicated</code></td><td>13</td><td>Feb 2025 – Mar 2026</td><td>On-Prem Deploy</td></tr>
+        <tr><td><code>api-gateway</code></td><td>7</td><td>Mar 2024 – Jun 2025</td><td>API Gateway</td></tr>
+        <tr><td><code>authz-service</code></td><td>7</td><td>Mar 2024 – Aug 2025</td><td>Authorization</td></tr>
+        <tr><td><code>notification-service</code></td><td>5</td><td>Mar 2024 – Aug 2025</td><td>Notifications</td></tr>
+        <tr><td><code>init-setup</code></td><td>5</td><td>Mar 2024 – Sep 2025</td><td>Platform Bootstrap</td></tr>
+        <tr><td><code>system-service</code></td><td>4</td><td>Mar 2024 – Sep 2025</td><td>System Service</td></tr>
+        <tr><td><code>secret-service</code></td><td>2</td><td>Oct 2024 – Feb 2025</td><td>Secrets Mgmt</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Automate HA -->
+  <div class="card">
+    <h3>🏗️ Chef Automate HA</h3>
+    <div class="meta">155+ commits · 2021 – 2026 · chef/automate monorepo</div>
+    <p style="color:var(--text-muted); margin-bottom:1rem;">High-availability architecture for Chef Automate — enterprise infrastructure automation platform. End-to-end contributor spanning backend Go development, Terraform, security hardening, and technical documentation.</p>
+    <ul>
+      <li><strong>Security Engineering</strong> — OpenSSL 3.0 compatibility, SQL injection remediation, TLS certificate management, HAProxy config reloads.</li>
+      <li><strong>Infrastructure &amp; Deployment</strong> — Terraform modules, Habitat package management, HAProxy upgrades, Elasticsearch → OpenSearch migration.</li>
+      <li><strong>PostgreSQL &amp; OpenSearch HA</strong> — WAL timeout tuning, max connections scaling, Vault-based certificate pull, PG leader health checks.</li>
+      <li><strong>Language Migrations</strong> — Ruby → Go rewrite of elastic-side-car, PostgreSQL client upgrade, Ruby 3.1.7 migration.</li>
+      <li><strong>Reliability Fixes</strong> — authz restart fix, backup mount fix, data collector token handling, GCS plugin support.</li>
+      <li><strong>Documentation</strong> — HA Phase 1 architecture docs, 5-node cluster guide, migration guides, DR page, Azure &amp; AWS deployment guides.</li>
+    </ul>
+    <div class="tags">
+      <span class="tag">Golang</span><span class="tag">Terraform</span><span class="tag">Habitat</span>
+      <span class="tag">PostgreSQL</span><span class="tag">OpenSearch</span><span class="tag">HAProxy</span>
+      <span class="tag">Shell Scripting</span><span class="tag">InSpec</span><span class="tag">AWS</span><span class="tag">Azure</span>
+    </div>
+  </div>
+
+  <!-- V-KYC -->
+  <div class="card">
+    <h3>📹 Video KYC Service (V-KYC)</h3>
+    <div class="meta">Finnovation Pvt Ltd · Aug 2019 – Nov 2020</div>
+    <p style="color:var(--text-muted); margin-bottom:1rem;">P2P video-call based identity verification platform built as SaaS for enterprise banking and fintech customers.</p>
+    <ul>
+      <li>Designed data models and REST API endpoints on AWS Lambda.</li>
+      <li>Integrated AWS WebRTC SDK; used Redis cache for low-latency lookups.</li>
+      <li>gRPC for inter-service communication; FCM for push notifications.</li>
+    </ul>
+    <div class="tags">
+      <span class="tag">Golang</span><span class="tag">AWS Lambda</span><span class="tag">WebRTC</span>
+      <span class="tag">Redis</span><span class="tag">gRPC</span>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <h2 class="section-title"><span>Technical Skills</span></h2>
+  <p class="section-subtitle">Technologies and tools I work with</p>
+  <div class="skills-grid">
+    <div class="skill-card"><h4>Languages</h4><p>Go (Golang), C++, Core Java, Python, Shell Scripting, JavaScript</p></div>
+    <div class="skill-card"><h4>Databases</h4><p>PostgreSQL, OpenSearch, MySQL, Redis</p></div>
+    <div class="skill-card"><h4>Cloud &amp; Infra</h4><p>AWS, Terraform, Docker, Kubernetes, Helm, Habitat, Linux</p></div>
+    <div class="skill-card"><h4>Architecture</h4><p>Microservices, RESTful APIs, gRPC, SaaS, Multi-tenant Systems</p></div>
+    <div class="skill-card"><h4>Message Brokers</h4><p>Beanstalkd, RabbitMQ, NATS</p></div>
+    <div class="skill-card"><h4>AI &amp; Dev Tools</h4><p>GitHub Copilot, Prompt Engineering, LLM-assisted Code Review, Git, CI/CD</p></div>
+    <div class="skill-card"><h4>Security</h4><p>OpenSSL 3.0, TLS/SSL, JWT, OAuth2/OIDC, Keycloak SSO</p></div>
+    <div class="skill-card"><h4>Management</h4><p>Engineering Management, Hiring, Roadmap Planning, Code Review, Mentorship</p></div>
+  </div>
+</section>
+
+<!-- EDUCATION -->
+<section id="education">
+  <h2 class="section-title"><span>Education &amp; Publications</span></h2>
+  <p class="section-subtitle">Academic background</p>
+  <div class="card">
+    <h3>M.Tech — Software Engineering</h3>
+    <div class="meta">MIT, Manipal · 2010 – 2012 · 7.9 CGPA</div>
+  </div>
+  <div class="card">
+    <h3>GATE Qualified</h3>
+    <div class="meta">AIR 1900 · Percentile 98.2 · 2010</div>
+  </div>
+  <div class="card">
+    <h3>B.Tech — Computer Science</h3>
+    <div class="meta">LNCT, Indore · 2004 – 2008 · 71.2%</div>
+  </div>
+  <div class="card" style="margin-top:2rem;">
+    <h3>📝 Publications</h3>
+    <ul>
+      <li>Modelling and Verification of Kerberos Protocol using Symbolic Model Verifier</li>
+      <li>Enhanced Mining Association Rule Algorithm with Reduced Time &amp; Space Complexity (2011)</li>
+      <li>Modelling &amp; Verification of Inter-Realm Authentication in Kerberos Using Symbolic Model</li>
+    </ul>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>
+    <a href="https://www.linkedin.com/in/punit-mundra/" target="_blank">LinkedIn</a> ·
+    <a href="https://github.com/punitmundra" target="_blank">GitHub</a> ·
+    <a href="mailto:punitmundra2008@gmail.com">Email</a> ·
+    <a href="Punit_CV.pdf" download>Download Resume</a>
+  </p>
+  <p style="margin-top:.75rem;">© 2026 Punit Mundra · Built with ❤️</p>
+  <p style="margin-top:.5rem; font-size:.75rem;">Open to Senior Engineering Manager roles · Bengaluru (preferred) · Open to remote</p>
+</footer>
+
+</body>
+</html>
