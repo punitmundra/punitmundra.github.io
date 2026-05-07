@@ -139,6 +139,7 @@
     <li><a href="#about">About</a></li>
     <li><a href="#experience">Experience</a></li>
     <li><a href="#projects">Projects</a></li>
+    <li><a href="#awards">Awards</a></li>
     <li><a href="#skills">Skills</a></li>
     <li><a href="#education">Education</a></li>
   </ul>
@@ -149,6 +150,7 @@
   <div>
     <h1>Hi, I'm <span>Punit Mundra</span></h1>
     <p class="subtitle">Senior Engineering Manager · Backend Systems · Cloud &amp; SaaS</p>
+    <p style="color:var(--accent); font-size:.95rem; margin-bottom:1.5rem; font-weight:500;">🟢 Open to Principal Engineer / Engineering Manager roles</p>
     <div class="contact">
       <span>📞 +91 9738869492</span>
       <span>✉️ <a href="mailto:punitmundra2008@gmail.com">punitmundra2008@gmail.com</a></span>
@@ -183,9 +185,24 @@
 
   <div class="timeline">
     <div class="timeline-item">
-      <h3>Progress Software (Chef) — Senior Engineering Manager</h3>
-      <div class="meta">Dec 2020 – Present</div>
+      <h3>Progress Software (Chef) — Engineering Manager</h3>
+      <div class="meta">Jun 2024 – Present</div>
       <p>Lead a team of 8 engineers across 15+ microservices for Platform 360 — a multi-tenant SaaS platform. Drove AWS cost reduction, improved deployment frequency with GitOps, shipped Platform 360 from greenfield to production, pioneered AI-assisted development with GitHub Copilot, and architected Automate HA for multi-node on-premises &amp; air-gapped deployments.</p>
+    </div>
+    <div class="timeline-item">
+      <h3>Progress Software (Chef) — Principal Software Engineer III</h3>
+      <div class="meta">Dec 2023 – Jun 2024</div>
+      <p>Led architecture and hands-on development of the Chef 360 Platform — built the User Identity &amp; Auth Service from scratch, contributed across 9 repositories spanning microservices, API gateway, and Kubernetes Helm charts.</p>
+    </div>
+    <div class="timeline-item">
+      <h3>Progress Software (Chef) — Principal Software Engineer II</h3>
+      <div class="meta">Dec 2021 – Dec 2023</div>
+      <p>Core contributor to Chef Automate HA — designed high-availability backend services, led the Elasticsearch to OpenSearch migration, and developed CLI-driven deployment validation tooling.</p>
+    </div>
+    <div class="timeline-item">
+      <h3>Progress Software (Chef) — Principal Software Engineer I</h3>
+      <div class="meta">Dec 2020 – Dec 2021</div>
+      <p>Joined the Chef Automate team; established foundational HA infrastructure including PostgreSQL leader health checks and initial Terraform provisioning workflows.</p>
     </div>
     <div class="timeline-item">
       <h3>Finnovation Pvt Ltd — Team Lead</h3>
@@ -223,15 +240,15 @@
   <!-- Platform 360 -->
   <div class="card">
     <h3>🚀 Chef 360 Platform</h3>
-    <div class="meta">103+ commits · Dec 2023 – Mar 2026 · 9 repositories</div>
+    <div class="meta">Dec 2023 – Mar 2026</div>
     <p style="color:var(--text-muted); margin-bottom:1rem;">Multi-tenant SaaS platform built on microservices architecture supporting enterprise Chef customers. Delivers user &amp; tenant management, authorization, and notification services at scale.</p>
     <ul>
-      <li><strong>Built the User Identity &amp; Auth Service from scratch</strong> — Login API, JWT refresh, auth code verification, DAL for users, sessions, API tokens, and credentials (38 commits).</li>
+      <li><strong>Built the User Identity &amp; Auth Service from scratch</strong> — Login API, JWT refresh, auth code verification, DAL for users, sessions, API tokens, and credentials.</li>
       <li><strong>API Gateway contributions</strong> — Prometheus metrics, rate limiting, token auth bug fixes, Go 1.24.4 upgrade.</li>
       <li><strong>Authorization Service</strong> — RBAC roles support, enrollment APIs, Copilot instructions setup.</li>
       <li><strong>Notification Service</strong> — SendGrid email integration, logger crash fix, Copilot instructions.</li>
-      <li><strong>Kubernetes Helm Charts</strong> — Keycloak performance tuning, RabbitMQ logging, PostgreSQL RDS support, metrics endpoints (22 commits).</li>
-      <li><strong>Replicated On-Prem Packaging</strong> — Tiered HA preflight checks, Keycloak optimisation, managed services support, archive pipeline (13 commits).</li>
+      <li><strong>Kubernetes Helm Charts</strong> — Keycloak performance tuning, RabbitMQ logging, PostgreSQL RDS support, metrics endpoints.</li>
+      <li><strong>Replicated On-Prem Packaging</strong> — Tiered HA preflight checks, Keycloak optimisation, managed services support, archive pipeline.</li>
     </ul>
     <div class="tags">
       <span class="tag">Golang</span><span class="tag">PostgreSQL</span><span class="tag">OpenSearch</span>
@@ -239,27 +256,12 @@
       <span class="tag">Replicated</span><span class="tag">JWT</span><span class="tag">Keycloak</span>
       <span class="tag">RabbitMQ</span><span class="tag">SendGrid</span><span class="tag">AWS</span>
     </div>
-
-    <table class="repo-table">
-      <thead><tr><th>Repository</th><th>Commits</th><th>Period</th><th>Domain</th></tr></thead>
-      <tbody>
-        <tr><td><code>user-accounts-service</code></td><td>38</td><td>Dec 2023 – Mar 2024</td><td>Identity &amp; Auth</td></tr>
-        <tr><td><code>helm</code></td><td>22</td><td>Oct 2024 – Mar 2026</td><td>Kubernetes Helm</td></tr>
-        <tr><td><code>chef-replicated</code></td><td>13</td><td>Feb 2025 – Mar 2026</td><td>On-Prem Deploy</td></tr>
-        <tr><td><code>api-gateway</code></td><td>7</td><td>Mar 2024 – Jun 2025</td><td>API Gateway</td></tr>
-        <tr><td><code>authz-service</code></td><td>7</td><td>Mar 2024 – Aug 2025</td><td>Authorization</td></tr>
-        <tr><td><code>notification-service</code></td><td>5</td><td>Mar 2024 – Aug 2025</td><td>Notifications</td></tr>
-        <tr><td><code>init-setup</code></td><td>5</td><td>Mar 2024 – Sep 2025</td><td>Platform Bootstrap</td></tr>
-        <tr><td><code>system-service</code></td><td>4</td><td>Mar 2024 – Sep 2025</td><td>System Service</td></tr>
-        <tr><td><code>secret-service</code></td><td>2</td><td>Oct 2024 – Feb 2025</td><td>Secrets Mgmt</td></tr>
-      </tbody>
-    </table>
   </div>
 
   <!-- Automate HA -->
   <div class="card">
     <h3>🏗️ Chef Automate HA</h3>
-    <div class="meta">155+ commits · 2021 – 2026 · chef/automate monorepo</div>
+    <div class="meta">2021 – 2026</div>
     <p style="color:var(--text-muted); margin-bottom:1rem;">High-availability architecture for Chef Automate — enterprise infrastructure automation platform. End-to-end contributor spanning backend Go development, Terraform, security hardening, and technical documentation.</p>
     <ul>
       <li><strong>Security Engineering</strong> — OpenSSL 3.0 compatibility, SQL injection remediation, TLS certificate management, HAProxy config reloads.</li>
@@ -290,6 +292,27 @@
       <span class="tag">Golang</span><span class="tag">AWS Lambda</span><span class="tag">WebRTC</span>
       <span class="tag">Redis</span><span class="tag">gRPC</span>
     </div>
+  </div>
+</section>
+
+<!-- AWARDS -->
+<section id="awards">
+  <h2 class="section-title"><span>Awards &amp; Recognition</span></h2>
+  <p class="section-subtitle">Recognised for impact and innovation</p>
+  <div class="card">
+    <h3>🏆 A Night-on-the-Town Award</h3>
+    <div class="meta">Progress Software · 2025</div>
+    <p style="color:var(--text-muted);">Awarded for outstanding contributions and impact to the engineering organisation.</p>
+  </div>
+  <div class="card">
+    <h3>🏆 A Night-on-the-Town Award</h3>
+    <div class="meta">Progress Software · 2024</div>
+    <p style="color:var(--text-muted);">Recognised for exceptional performance and delivery excellence.</p>
+  </div>
+  <div class="card">
+    <h3>🥈 Hackathon 2023 — Second Prize</h3>
+    <div class="meta">Progress Software · 2023</div>
+    <p style="color:var(--text-muted);">Won second prize at the company-wide hackathon for innovative engineering solution.</p>
   </div>
 </section>
 
@@ -344,7 +367,7 @@
     <a href="Punit_CV.pdf" download>Download Resume</a>
   </p>
   <p style="margin-top:.75rem;">© 2026 Punit Mundra · Built with ❤️</p>
-  <p style="margin-top:.5rem; font-size:.75rem;">Open to Senior Engineering Manager roles · Bengaluru (preferred) · Open to remote</p>
+  <p style="margin-top:.5rem; font-size:.75rem;">Open to Principal Engineer / Engineering Manager roles · Bengaluru (preferred) · Open to remote</p>
 </footer>
 
 </body>
